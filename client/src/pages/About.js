@@ -1,17 +1,18 @@
 import React from "react";
+import { Typography, Box } from "@mui/material";
 
-const About = () => {
+export default function About() {
   return (
-    <div>
-      <h1>About Me</h1>
-      <p>
+    <Box>
+      <Typography variant="h3" gutterBottom>
+        About Me
+      </Typography>
+      <Typography variant="body1">
         Hi! I'm Kaia, a software engineer specializing in full-stack
         development. I love building creative solutions and learning new
         technologies.
-      </p>
+      </Typography>
       {/* Add more details about yourself here */}
-    </div>
+    </Box>
   );
-};
-
-export default About;
+}

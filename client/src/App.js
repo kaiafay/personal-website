@@ -4,34 +4,49 @@ import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import { AppBar, Toolbar, Typography, Button, Container } from "@mui/material";
 
-const App = () => {
+export default function App() {
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/resume">Resume</Link>
-          </li>
-          <li>
-            <Link to="/about">About Me</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "black", opacity: 0.9, height: 80 }}
+      >
+        <Toolbar sx={{ minHeight: 80, height: "100%", alignItems: "center" }}>
+          <Typography
+            variant="button"
+            sx={{
+              flexGrow: 1,
+              color: "white",
+              fontSize: "1.8rem",
+              textTransform: "uppercase",
+            }}
+          >
+            Kaia Fay
+          </Typography>
+          <Button color="inherit" component={Link} to="/">
+            Home
+          </Button>
+          <Button color="inherit" component={Link} to="/resume">
+            Resume
+          </Button>
+          <Button color="inherit" component={Link} to="/about">
+            About Me
+          </Button>
+          <Button color="inherit" component={Link} to="/contact">
+            Contact
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <Container sx={{ mt: 4 }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Container>
     </div>
   );
-};
-
-export default App;
+}

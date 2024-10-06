@@ -1,15 +1,16 @@
 import React from "react";
+import { Typography, Box } from "@mui/material";
 
-const Resume = () => {
+export default function Resume() {
   return (
-    <div>
-      <h1>Resume</h1>
-      <p>
+    <Box>
+      <Typography variant="h3" gutterBottom>
+        Resume
+      </Typography>
+      <Typography variant="body1">
         Here you can find my professional experience, education, and skills.
-      </p>
+      </Typography>
       {/* Add sections for experience, skills, and education here */}
-    </div>
+    </Box>
   );
-};
-
-export default Resume;
+}
