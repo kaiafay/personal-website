@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
 import myPhoto from "../assets/avatar.jpg";
-
+import { Typewriter } from "react-simple-typewriter";
 export default function Home() {
   return (
     <Box
@@ -27,7 +27,15 @@ export default function Home() {
       </Box>
       <Box>
         <Typography variant="h3" gutterBottom>
-          Welcome to my personal website
+          <Typewriter
+            words={["Welcome to My Personal Website"]}
+            loop={1}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
         </Typography>
         <Typography variant="body1">
           This is the home page. Here you can find information about me, my
